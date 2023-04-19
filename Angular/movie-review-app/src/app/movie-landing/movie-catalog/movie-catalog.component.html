@@ -1,0 +1,103 @@
+<div class="wrapper">
+    <div class="welcome-note common-margin">
+        <p>Welcome {{userInfo?.displayName}}!</p>
+        <small>Start writting moview Reviews.</small>
+    </div>
+    <div class="separator common-margin">
+        <span class="line"></span>
+        <span class="name">Recent Reviewed Movies</span>
+        <span class="line"></span>
+    </div>
+    <div class="loader-spinner" *ngIf="!isDataLoading">
+        <app-spinner></app-spinner>
+    </div>
+    <div class="recent-review common-margin">
+        <div class="movie-catalogs">
+            <div class="movie-card" *ngFor="let obj of recentMovieList">
+                <div class="card-name">
+                    <p>{{obj.movieName}} <small>({{obj.language}})</small></p> 
+                </div>
+                <div class="rating">
+                    <span>{{obj.rating}}</span>
+                    <span> 
+                        <mat-icon>star</mat-icon>
+                    </span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="about-woods">
+        <div class="about-content">
+            <div class="wood-card">
+                <div class="wood-card-header">
+                    <h3>Telugu</h3>  
+                </div>
+                <div class="wood-card-body">
+                    <small>Top movies from tollywood</small>
+                    <ul>
+                        <li>RRR</li>
+                        <li>Pushpa</li>
+                        <li>Veera simha reddy</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="wood-card">
+                <div class="wood-card-header">
+                    <h3>Kannada</h3>  
+                </div>
+                <div class="wood-card-body">
+                    <small>Top movies from kollywood</small>
+                    <ul>
+                        <li>KGF</li>
+                        <li>Kantara</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="wood-card">
+                <div class="wood-card-header">
+                    <h3>Tamil</h3>  
+                </div>
+                <div class="wood-card-body">
+                    <small>Top movies from sandle wood</small>
+                    <ul>
+                        <li>Jai Bheem</li>
+                        <li>Vikram</li>
+                        <li>Master</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="wood-card">
+                <div class="wood-card-header">
+                    <h3>Hindi</h3>  
+                </div>
+                <div class="wood-card-body">
+                    <small>Top movies from bollywood</small>
+                    <ul>
+                        <li>Pathan</li>
+                        <li>Krrish 3</li>
+                        <li>Tiger</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="writer-note">
+        <div class="logo">
+            <img src="../../../assets/images/typing computer.png" alt="">
+        </div>
+        <div class="note-content">
+            <h1>What are you waiting for ? start</h1>
+            <p>The movie review application is a platform that allows users to browse, read and submit reviews for various movies. The app provides a comprehensive database of movies, including the latest releases, classics, and international films. Users can search for movies by title, genre, or keyword, and read reviews from other users to help them make an informed decision about what to watch.
+
+                The app also allows users to leave their own reviews and ratings, which can be helpful for others who are looking for recommendations. Users can create accounts to save their favorite movies  </p>
+
+            <button routerLink="/my-reviews/write-review">Write here</button>
+        </div>
+    </div>
+  
+    
+</div>

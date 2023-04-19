@@ -1,0 +1,85 @@
+<div class="wrapper">
+  <div class="err-text" *ngIf="isWritten">
+    <p>You have already reviewed the movie please do another..</p>
+  </div>
+    <div class="login-container">
+        <form [formGroup]="reviewForm" (ngSubmit)="submit()">
+            <h1>Review Form</h1>
+            <div class="form-input">
+              <label for="">Movie name</label>
+              <input type="text" 
+              formControlName="name" 
+              placeholder="Enter Movie name"
+              [class.error-class]="reviewForm.get('name')?.errors && reviewForm.get('name')?.touched"
+              >
+              <small *ngIf="reviewForm.get('name')?.hasError('required') && reviewForm.get('name')?.touched">Movie name is required</small>
+             
+            </div>
+            <div class="form-input">
+              <label for="">Language</label>
+              
+              <input type="text"
+              formControlName="lang"  
+              placeholder="Enter Language"
+              [class.error-class]="reviewForm.get('lang')?.errors && reviewForm.get('lang')?.touched"
+              >
+              <small *ngIf="reviewForm.get('lang')?.hasError('required') && reviewForm.get('lang')?.touched">Language is required</small>
+             
+            </div>
+           
+            <div class="form-input">
+              <label for="">Cast&Crew</label>
+              <input type="text" 
+              formControlName="castCrew" 
+              placeholder="Enter  Dir Hero and Heroin name seperated by ,"
+              [class.error-class]="(reviewForm.get('castCrew')?.errors && reviewForm.get('castCrew')?.touched)"
+              >
+              <small  *ngIf="reviewForm.get('castCrew')?.hasError('required') && reviewForm.get('castCrew')?.touched">cast & crew are required</small>
+             
+            </div>
+            <div class="rating-verdict">
+              <div class="form-input rating">
+                <label for="">Rating</label>
+                <input type="text" 
+                formControlName="rating" 
+                placeholder="Enter Rating"
+                [class.error-class]="(reviewForm.get('rating')?.errors && reviewForm.get('rating')?.touched)"
+                >
+                <small  *ngIf="reviewForm.get('rating')?.hasError('required') && reviewForm.get('rating')?.touched">Rating is required</small>
+               
+              </div>
+              <div class="form-input verdict">
+                <label for="">Verdict</label>
+                <input type="text" 
+                formControlName="verdict" 
+                placeholder="Enter your Verdict"
+                [class.error-class]="(reviewForm.get('verdict')?.errors && reviewForm.get('verdict')?.touched)"
+                >
+                <small  *ngIf="reviewForm.get('verdict')?.hasError('required') && reviewForm.get('verdict')?.touched">Verdict is required</small>
+               
+              </div>
+            </div>
+            <div class="form-input" *ngIf="true">
+              <label for="">Movie poster</label>
+              <input type="file" 
+            
+              placeholder="upload poster"
+              (change)="uploadPoster($event)"
+              [class.error-class]="(reviewForm.get('poster')?.errors && reviewForm.get('poster')?.touched)"
+              >
+              <small  *ngIf="reviewForm.get('poster')?.hasError('required') && reviewForm.get('poster')?.touched">Poster is required</small>
+            </div>
+            <div class="button-area">
+                <button>Submit</button>
+            </div>
+          </form>
+          
+    </div>
+
+</div>
+
+<div class="refresh-popup" *ngIf="isDataSubmitted">
+  <div class="popup">
+    <app-spinner></app-spinner>
+  </div>
+</div>

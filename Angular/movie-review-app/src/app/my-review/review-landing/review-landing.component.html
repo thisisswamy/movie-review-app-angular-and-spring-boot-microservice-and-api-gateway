@@ -1,0 +1,22 @@
+<div class="wrapper">
+    <div class="landing-title">
+        <p>My Reviews</p>
+        <button routerLink="/my-reviews/write-review">+ Write</button>
+    </div>
+    <div class="search-item">
+        <input  disabled type="text" placeholder="Search Movie Here" [(ngModel)]="searchFilter">
+        <button disabled >search</button>
+    </div>
+    <div class="loader-spinner" *ngIf="!isDataLoading">
+        <app-spinner></app-spinner>
+    </div>
+    <div class="review-section" >
+        <app-review-card [movieDetails]="moviesList" [searchFilter]="searchFilter"></app-review-card>
+    </div>
+</div>
+
+<!-- <div class="delete-popup">
+    <div class="popup">
+        <app-popup></app-popup>
+    </div>
+</div> -->

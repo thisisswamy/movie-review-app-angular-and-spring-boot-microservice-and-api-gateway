@@ -1,0 +1,52 @@
+<div class="movie-catalogs">
+    <div *ngFor="let obj of movieDetails">
+        <div *ngIf="obj.movieName.toLowerCase().includes(searchFilter.toLowerCase())">
+
+            <div class="movie-card" >
+                <div class="card-header">
+                    <div class="card-logo">
+                        <img src="../../../assets/posters/{{obj.reviewFormImage.imageName}}" alt="Movie-Image">
+                    </div>
+                    <div class="card-title">
+                        <h3>{{obj?.movieName}}</h3>
+                    </div>
+                </div>
+                <div class="movie-des">
+                    <ul>
+                        <li><span>Language :</span> {{obj?.language}}</li>
+                        <li><span>Category :</span> Action & Drama</li>
+                        <li><span>Verdict :</span> {{obj?.verdict}}</li>
+                        <li><span>Rating :</span> {{obj?.rating}}/10 
+                            <!-- <span>
+                            <mat-icon>star</mat-icon>
+                            </span> -->
+                        </li>
+                        <li class="castContainer"><span>Cast&Crew :</span> &nbsp; <span class="castCrew" *ngFor="let cast of obj?.castCrew">{{cast+", "}}</span></li>
+                        
+                        
+                    </ul>
+                </div>
+                <div class="actions">
+                    <span class="delete-icon"   (click)="delete($event,obj)">
+                        <mat-icon>delete</mat-icon>
+                    </span>
+                    <!-- <span class="edit-icon" matTooltip="Edit" matTooltipPosition="above">
+                        <mat-icon>edit</mat-icon>
+                    </span> -->
+                </div>
+        </div>
+
+        </div>
+        <!-- <div class="no-data" *ngIf="obj.movieName.toLowerCase().includes(searchFilter.toLowerCase()) && searchFilter.length>=1">
+            <p>No matched data found ! Please try again</p>
+        </div> -->
+
+    </div>
+    
+</div>
+
+<div class="delete-popup" [ngClass]="isDeleteClicked ? 'active':''">
+    <div class="popup">
+        <app-popup (deletePopup)="deleteEvent($event)"></app-popup>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="wrapper">
+    <div class="user-details">
+        <div class="logo">
+            <img src="../../../assets/images/profile.png" alt="User_Image">
+        </div>
+        <div class="details">
+            <p class="heading"> <span>Name : </span> {{userInfo.displayName}} </p>
+            <p class="heading"> <span>Role : </span> user </p>
+            <p class="heading"> <span>Rated Movies : </span> {{totalMoviesCount}} </p>
+
+            <div class="edit-area">
+                <button (click)="changePhoto()" matTooltip="Temporary Restricted." >change photo</button>
+                <button (click)="logout()">Logout</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,50 @@
+.wrapper{
+    margin: 2em;
+    height: 70vh;
+    .user-details{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        border: 1.2px solid #dddd;
+        background-color: #f1f1f1;
+        padding: 10px;
+        border-radius: 3px;
+        margin-bottom: 2em;
+        .logo{
+            border: 1px solid #222;
+            border-radius: 50%;
+            width: 130px;
+            height: 130px;
+            img{
+                width: 100%;
+            }
+            
+        }
+        .details{
+            .heading{
+                color: #222;
+                span{
+                    color: #6f6e6e;
+                    margin-right: 10px;
+                    font-size: .8em;
+                }
+            }
+            .edit-area{
+                padding: 10px 10px 10px 0;
+                display: flex;
+                gap: 1em;
+                flex-wrap: wrap;
+                button{
+                    cursor: pointer;
+                    outline: none;
+                    border: none;
+                    background-color: #222;
+                    color: #ffff;
+                    padding: 5px ;
+                    font-size: .6em;
+                }
+            }
+        }
+
+    }
+}

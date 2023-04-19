@@ -1,0 +1,129 @@
+.header-wrapper {
+    background-color: #fff;
+    box-shadow: 0 0 10px 0 rgba(0 0 0/10%);
+    padding: 10px 10px;
+    z-index: 2;
+    
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .title-logo {
+      display: flex;
+      align-items: center;
+      gap: 2em;
+      span {
+        font-size: 1.6em;
+        font-weight: 700;
+        color: #001d3d;
+      }
+      .menu-icon{
+        cursor: pointer; 
+        display: none;
+        background-color: #fff;
+        border-radius: 50%;
+        padding: 14px 10px;
+        box-shadow:  0 0 10px 0 rgba(0 0 0/20%);
+        background-color: rgb(255, 255, 255);
+        .menu-bar1,.menu-bar2,.menu-bar3{
+            border: 1.3px solid #001d3d;
+            width: 27px;
+        }
+        .menu-bar2{
+            margin:7px 0 ;
+        }
+        &.menu-close{
+            transition: all .2s ease-in-out;
+            .menu-bar1{
+                display: none;
+            }
+            .menu-bar2{
+                transform: rotate(45deg);
+            }
+            .menu-bar3{
+                position: relative;
+                top: -8px;
+                transform: rotate(-45deg);
+            }
+    
+        }
+
+        @media(max-width:1020px){
+          display: block;
+        }
+        
+
+      }
+    }
+    .nav-items {
+      ul {
+        margin: 0;
+        list-style: none;
+        display: flex;
+        li {
+          font-size: 1em;
+          cursor: pointer;
+          span{
+            position: relative;
+            display: none;
+            top: 8px;
+            .mat-icon{
+              font-size: 1.27em;
+            }
+          }
+        }
+        .activeLink{
+          color: rgb(14, 97, 214);
+        }
+
+        li:not(last-child) {
+          margin-right: 1.2em;
+        }
+        li:hover {
+          color: rgb(14, 97, 214);
+        }
+      }
+    }
+    
+    @media(max-width:1020px){
+      .nav-items{
+        visibility: hidden;
+        opacity: 0;
+        top: 0;
+        ul{
+          flex-direction: column;
+          position: fixed;
+          left: 0;
+          top: 67px;
+          height: 100vh;
+          z-index:1;
+          background-color: #ffff;
+          width: 180px;
+          padding: 10px;
+          padding-top: 20px;
+          box-shadow: 0 0 10px 0 rgba(0 0 0/5%);
+
+          li{
+            padding: 8px;
+            span{
+              display: inline-block;
+            }
+          }
+
+        }
+        &.active{
+          transition: all .5s ease-in-out;
+          visibility: visible;
+          opacity: 1;
+        }
+      }
+    }
+    
+  }
+
+  
+}
+
+.activeLink{
+  color: rgb(14, 97, 214);
+}
